@@ -44,7 +44,7 @@ const findScratch = (theArray, callback) => {
         let element = theArray[i]
         let result = callback(element, i, theArray)
         if(result){
-            return theArray[i]
+            return element
         } 
     }
 }
