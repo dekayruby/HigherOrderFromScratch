@@ -14,9 +14,10 @@ console.log(forEachScratch(myArr, num => num + 2))
 const filterScratch = (theArray, callback) => {
     let filteredArray = []
     for(let i = 0; i < theArray.length; i++){
-        let resultArr = callback(theArray[i], i, theArray)
+        let element = theArray[i]
+        let resultArr = callback(element, i, theArray)
         if(resultArr){
-            filteredArray.push(theArray[i])
+            filteredArray.push(element)
         }
     }
     return filteredArray
@@ -27,9 +28,10 @@ console.log(filterScratch(myArr, num => num < 4))
 const findIndexScratch = (theArray, callback) => {
    
     for(let i = 0; i < theArray.length; i++){
-        let result = callback(theArray[i], i, theArray)
+        let element = theArray[i]
+        let result = callback(element, i, theArray)
         if(result){
-            return theArray[i]
+            return element
         } else {
             return -1
         }
@@ -39,12 +41,11 @@ console.log(findIndexScratch(myArr, num => num > 5))
 
 const findScratch = (theArray, callback) => {
     for(let i = 0 ; i < theArray.length; i++){
-        let result = callback(theArray[i], i, theArray)
+        let element = theArray[i]
+        let result = callback(element, i, theArray)
         if(result){
             return theArray[i]
-        } else {
-            return undefined
-        }
+        } 
     }
 }
-console.log(findScratch(myArr, num => num < 5))
+console.log(findScratch(myArr, num => num > 5))
